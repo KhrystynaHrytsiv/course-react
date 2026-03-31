@@ -1,12 +1,12 @@
 import './App.css'
-import {Posts} from "./components/posts/Posts.tsx";
+import {Comments} from "./components/comments/Comments.tsx";
 
 
 function App() {
 
   return (
     <>
-        <Posts/>
+        <Comments/>
     </>
   )
 }
