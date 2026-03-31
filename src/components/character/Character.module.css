@@ -1,0 +1,15 @@
+.member{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #d5c8c8;
+}
+.member p{
+    font-size: 20px;
+    line-height: 1.5;
+    padding: 0 50px;
+}
+.member img{
+    height: 300px;
+}
