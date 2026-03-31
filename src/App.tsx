@@ -1,17 +1,13 @@
 import './App.css'
-import {MyComponent} from "./components/MyComponent.tsx";
+import {products} from "./data/product-list.ts";
+import {Product} from "./components/my-product/Product.tsx";
 
 
 function App() {
 
   return (
     <>
-      <MyComponent title={'hello 1'}>
-          mkgovsdkmvc
-      </MyComponent>
-      <MyComponent title={'title 2'}/>
-      <MyComponent title={'title 3'}/>
-      {/*{MyComponent({text: 'hello 2'})}*/}
+      {products.map((product, index) =><Product product={product} key={index}/>)}
     </>
   )
 }
