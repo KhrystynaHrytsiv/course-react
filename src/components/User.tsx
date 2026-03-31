@@ -2,12 +2,15 @@ import type IUser from "../interface/IUser.ts";
 import type {FC} from "react";
 
 interface IProp {
-    user:IUser
+    user:IUser,
+    upp:(item:IUser) =>void
 }
-const User:FC<IProp> = ({user}) => {
+const User:FC<IProp> = ({user, upp}) => {
     return (
         <div>
-            {user.name}
+            <div>{user.name}</div>
+            <button onClick={()=>{
+                upp(user)}}>details</button>
         </div>
     );
 };
