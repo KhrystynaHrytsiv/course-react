@@ -1,12 +1,12 @@
 import './App.css'
-import {TodosComponent} from "./components/todos/TodosComponent.tsx";
+import {Products} from "./components/products/Products.tsx";
 
 
 function App() {
 
   return (
     <>
-        <TodosComponent/>
+        <Products/>
     </>
   )
 }
