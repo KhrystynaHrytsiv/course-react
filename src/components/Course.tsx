@@ -9,7 +9,7 @@ const Course:FC<IProp> = ({course}) => {
     return (
         <div className='border-gray-500 bg-gray-300 my-3 w-50 text-center'>
             <h2 className='font-bold'>{title}</h2>
-            <p>{monthDuration}</p>
+            <p>MonthDuration: {monthDuration}</p>
         </div>
     );
 };
