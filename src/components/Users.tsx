@@ -1,16 +1,25 @@
 import {useEffect, useState} from "react";
 import type IUser from "../interface/IUser.ts";
 import {User} from "./User.tsx";
+import {getUsers} from "../services/api.ts";
 
 const Users = () => {
     const [users, setUsers] = useState<IUser[]>([]);
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
-            .then(res => setUsers(res))
-        return ()=>{
-            console.log('done');
+       // getUsers().then(res => setUsers(res))
+       //  return ()=>{
+       //      console.log('done');
+       //  }
+
+        const fetchData = async () =>{
+            const users = await getUsers();
+            setUsers(users);
         }
+        fetchData()
+
+        return ()=>{
+                 console.log('done');
+             }
     }, [ ]);
     return (
         <div>
