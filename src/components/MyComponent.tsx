@@ -1,11 +1,13 @@
-import type {FC} from "react";
+import type {FC, ReactNode} from "react";
 interface IProp {
-    text:string
+    title:string,
+    children?:ReactNode
 }
-const MyComponent:FC<IProp> = ({text}) => {
+const MyComponent:FC<IProp> = ({title, children}) => {
     return (
         <div className='text-3xl font-bold underline' >
-            {text}
+            <h2>{title}</h2>
+            <p>{children}</p>
         </div>
     );
 };

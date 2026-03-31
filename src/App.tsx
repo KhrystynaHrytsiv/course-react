@@ -6,9 +6,11 @@ function App() {
 
   return (
     <>
-      <MyComponent text={'hello 1'}/>
-      <MyComponent text={'hello 12'}/>
-      <MyComponent text={'hello 3'}/>
+      <MyComponent title={'hello 1'}>
+          mkgovsdkmvc
+      </MyComponent>
+      <MyComponent title={'title 2'}/>
+      <MyComponent title={'title 3'}/>
       {/*{MyComponent({text: 'hello 2'})}*/}
     </>
   )
