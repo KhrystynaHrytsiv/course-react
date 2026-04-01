@@ -1,9 +1,10 @@
+import {PostsJson} from "../../components/posts/PostsJson.tsx";
 
 
 const PostsPlaceholderPage = () => {
     return (
         <div>
-            Posts Placeholder Page
+          <PostsJson/>
         </div>
     );
 };

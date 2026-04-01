@@ -1,7 +1,9 @@
+import {UsersJson} from "../../components/users/UsersJson.tsx";
+
 const UsersPlaceholderPage = () => {
     return (
         <div>
-            Users Placeholder Page
+          <UsersJson/>
         </div>
     );
 };
