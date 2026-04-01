@@ -24,8 +24,8 @@ const Product:FC<IProp> = ({product}) => {
             <div>Shipping Information: {product.shippingInformation}</div>
             <div>Availability Status: {product.availabilityStatus}</div>
                 <div className={'reviewsContainer'}>Reviews:
-                        {product.reviews.map(review =>
-                            <div>
+                        {product.reviews.map((review, index) =>
+                            <div key={index}>
                                 <div>Rating: {review.rating}</div>
                                 <div>{review.comment}</div>
                                 <div>Date: {review.date}</div>
@@ -38,7 +38,7 @@ const Product:FC<IProp> = ({product}) => {
             <div>Created at: {product.meta.createdAt}</div>
             <img src={product.thumbnail} alt={product.title}/>
                 {product.images.length > 1 &&( <div className={'imageContainer'}>images:
-                    {product.images.map(img => <img src={img} alt={'photo'}/>)}
+                    {product.images.map((img, index) => <img src={img} alt={'photo'} key={index}/>)}
             </div>)}
         </div>
     );
