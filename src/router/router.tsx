@@ -8,6 +8,7 @@ import {UsersDummyPage} from "../pages/users-pages/UsersDummyPage.tsx";
 import {PostsPlaceholderPage} from "../pages/posts-pages/PostsPlaceholderPage.tsx";
 import {PostsDummyPage} from "../pages/posts-pages/PostsDummyPage.tsx";
 import {CommentsPlaceholderPage} from "../pages/comments-pages/CommentsPlaceholderPage.tsx";
+import {CommentsDummyPage} from "../pages/comments-pages/CommentsDummyPage.tsx";
 
 const router = createBrowserRouter([
     {path: '', element:<MainLayout/>, children:[
@@ -20,8 +21,10 @@ const router = createBrowserRouter([
                     {path: 'dummyjson', element: <PostsDummyPage/>},
                 ]},
             {path:'comments', element: <CommentsPage/>, children:[
-                    {path: 'jsonplaceholder', element:<CommentsPlaceholderPage/> },
-                ]}
+                {path: 'jsonplaceholder', element:<CommentsPlaceholderPage/> },
+                    {path: 'dummyjson', element: <CommentsDummyPage/>}
+                ]},
+
         ]}
 ]);
 
