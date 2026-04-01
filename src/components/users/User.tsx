@@ -8,7 +8,7 @@ interface IProp {
 const User:FC<IProp> = ({user}) => {
     const navigate = useNavigate();
     const handleOnClick = () =>{
-        navigate('details', {state: user})
+        navigate('posts/'+ user.id, {state: user})
     }
     return (
         <div>
