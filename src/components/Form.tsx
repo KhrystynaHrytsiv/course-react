@@ -1,51 +1,21 @@
-import {type SyntheticEvent, useState} from "react";
+import {useForm} from "react-hook-form";
 
 interface IForm{
     username:string,
-    password:string
+    password:string,
+    age:number
 }
 const Form = () => {
-    const [formState, setFormState] = useState<IForm>({username:'hello', password: '1111'});
-
-
-    const handleSubmit = (ev:SyntheticEvent<HTMLFormElement>) => {
-        ev.preventDefault();
-        // console.log(ev);
-        // console.log(ev.target);
-        // const form = ev.target as HTMLFormElement;
-        // console.log(form);
-        // console.log(form.username.value);
-        // console.log(form.password.value);
-        const user ={
-            username: formState.username,
-            password:formState.password
-        };
-        console.log(user);
+    const {handleSubmit, register} = useForm<IForm>();
+    const handler =(formData:IForm) =>{
+        console.log(formData)
     }
-
-
-    // const handleUsernameChange = (e:FormEvent<HTMLInputElement>) => {
-    //     const input = e.target as HTMLInputElement;
-    //     console.log(input.value);
-    //     setFormState({...formState, username:input.value})
-    // }
-    // const handlePasswordChange = (e:FormEvent<HTMLInputElement>) => {
-    //     const input = e.target as HTMLInputElement;
-    //     console.log(input.value);
-    //     setFormState({...formState, password:input.value})
-    // }
-
-    const handleInputChange = (e:SyntheticEvent<HTMLInputElement>) => {
-        const input = e.target as HTMLInputElement;
-        console.log(input.name);
-        setFormState({...formState, [input.name]: input.value})
-    };
-
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <input type="text" name={'username'} value={formState.username} onChange={handleInputChange}/>
-                <input type="text" name={'password'} value={formState.password} onChange={handleInputChange}/>
+            <form onSubmit={handleSubmit(handler) }>
+                <input type="text" {...register('username')} />
+                <input type="text"  {...register('password')} />
+                <input type="number"  {...register('age')} />
                 <button>send</button>
             </form>
         </div>
