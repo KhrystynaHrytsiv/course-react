@@ -1,4 +1,6 @@
 import {useForm} from "react-hook-form";
+import {joiResolver} from "@hookform/resolvers/joi";
+import {validator} from "../validators/validator.ts";
 
 interface IForm{
     username:string,
@@ -6,17 +8,26 @@ interface IForm{
     age:number
 }
 const Form = () => {
-    const {handleSubmit, register} = useForm<IForm>();
+    const {handleSubmit, register, formState:{errors, isValid}} = useForm<IForm>({mode:'all', resolver:joiResolver(validator)});
     const handler =(formData:IForm) =>{
         console.log(formData)
     }
     return (
         <div>
             <form onSubmit={handleSubmit(handler) }>
-                <input type="text" {...register('username')} />
-                <input type="text"  {...register('password')} />
-                <input type="number"  {...register('age')} />
-                <button>send</button>
+                <label>
+                    <input type="text" {...register('username')} />
+                    {errors.username && <div>{errors.username.message}</div>}
+                </label>
+                <label>
+                    <input type="text"  {...register('password')} />
+                    {errors.password && <div>{errors.password.message}</div>}
+                </label>
+                <label>
+                    <input type="number"  {...register('age')} />
+                    {errors.age && <div>{errors.age.message}</div>}
+                </label>
+                <button disabled={!isValid}>send</button>
             </form>
         </div>
     )
