@@ -1,7 +1,7 @@
 import type {FC} from "react";
-import type {IUser} from "../models/IUser.ts";
+import type {IUser} from "../../models/IUser.ts";
 import {useNavigate} from "react-router-dom";
-
+import './Users.css'
 
 interface IProps {
     user:IUser
@@ -13,7 +13,7 @@ const User: FC<IProps> = ({user}) => {
         navigate(`${user.id}/carts`)
     }
     return (
-        <div>
+        <div className={'user'}>
             <div>{user.id}. {user.firstName}  {user.lastName}</div>
             <button onClick={handleClick}>see carts current user</button>
         </div>

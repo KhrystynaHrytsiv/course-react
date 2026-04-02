@@ -1,6 +1,6 @@
 import {type FC, useEffect, useState} from "react";
-import type {ICart} from "../models/ICart.ts";
-import {userService} from "../service/api.service.ts";
+import type {ICart} from "../../models/ICart.ts";
+import {userService} from "../../service/api.service.ts";
 import {Cart} from "./Cart.tsx";
 import css from './Cart.module.css'
 

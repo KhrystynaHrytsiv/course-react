@@ -1,0 +1,22 @@
+.usersContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    box-sizing: border-box;
+    width: 90%;
+    margin: 20px auto;
+}
+.user{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+    width: 200px;
+   border: 2px solid #706cbd;
+    padding: 5px;
+}
+.user button{
+    background-color: #a19fe7;
+    border: none;
+    border-radius: 5px;
+}

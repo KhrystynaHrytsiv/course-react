@@ -1,4 +1,4 @@
-import {UserCarts} from "../components/UserCarts.tsx";
+import {UserCarts} from "../components/carts/UserCarts.tsx";
 import {useParams} from "react-router-dom";
 
 const UserCartsPage = () => {

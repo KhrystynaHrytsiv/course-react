@@ -1,5 +1,5 @@
 import type { FC,} from "react";
-import type {ICart} from "../models/ICart.ts";
+import type {ICart} from "../../models/ICart.ts";
 import css from './Cart.module.css'
 
 interface IProps {

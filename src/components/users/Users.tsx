@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
-import type {IUser} from "../models/IUser.ts";
-import {userService} from "../service/api.service.ts";
+import type {IUser} from "../../models/IUser.ts";
+import {userService} from "../../service/api.service.ts";
 import {User} from "./User.tsx";
+import './Users.css'
 
 const Users = () => {
     const [users, setUsers] = useState<IUser[]>([]);
@@ -9,7 +10,7 @@ const Users = () => {
         userService.getUsers().then(value => setUsers(value.users))
     }, []);
     return (
-        <div>
+        <div className={'usersContainer'}>
             {users.map(user => <User user={user} key={user.id}/>)}
         </div>
     );
