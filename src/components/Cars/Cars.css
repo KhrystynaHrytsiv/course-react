@@ -1,0 +1,13 @@
+.carContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.car{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px solid #2b2142;
+    width: 150px;
+    padding: 10px;
+}
