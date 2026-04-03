@@ -9,7 +9,7 @@ const AuthProducts = () => {
         loadAuthProducts().then(value => setProducts(value))
             .catch(reason => {
                 console.log(reason);
-                refresh().then(() => loadAuthProducts())
+                refresh().then(() => loadAuthProducts()) //онови токени і виведи продукти
                     .then(value => setProducts(value))
             })
     }, []);
