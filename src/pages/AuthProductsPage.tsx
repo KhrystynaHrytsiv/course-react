@@ -1,7 +1,9 @@
+import {AuthProducts} from "../components/AuthProducts.tsx";
+
 const AuthProductsPage = () => {
     return (
         <div>
-            auth
+            <AuthProducts/>
         </div>
     );
 };
