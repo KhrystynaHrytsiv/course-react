@@ -1,7 +1,8 @@
 import {type FC, memo} from "react";
 
-const User:FC<{foo:()=> void}> = memo(() => {
+const User:FC<{foo:()=> void, arr:number[]}> = memo(({arr}) => {
     console.log('user');
+    console.log(arr);
     return (
         <div>
             user
