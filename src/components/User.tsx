@@ -1,6 +1,6 @@
-import {memo} from "react";
+import {type FC, memo} from "react";
 
-const User = memo(() => {
+const User:FC<{foo:()=> void}> = memo(() => {
     console.log('user');
     return (
         <div>
