@@ -5,7 +5,7 @@ function App() {
     const [count, setCount] = useState<number>(0);
     const callback = useCallback(() =>{
         console.log('useCallback');
-    }, []);
+    }, []); //запам'ятовує ф-цію і не створює нову при кожному рендері
 
   return (
     <div>
