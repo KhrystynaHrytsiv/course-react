@@ -1,13 +1,9 @@
 import {useEffect} from "react";
-import {login} from "../services/apiService.ts";
+import {login} from "../services/axios.ts";
 
 const Login = () => {
     useEffect(() => {
-        login({
-            username: 'emilys',
-            password: 'emilyspass',
-            expiresInMins: 1,
-        })
+        login({username: 'emmaj', password: 'emmajpass', expiresInMins: 1})
     }, []);
     return (
         <div>

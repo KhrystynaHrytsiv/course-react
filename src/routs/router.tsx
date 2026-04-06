@@ -1,13 +1,12 @@
 import {createBrowserRouter} from "react-router-dom";
 import {MainLayout} from "../layouts/MainLayout.tsx";
-import {HomePage} from "../pages/HomePage.tsx";
 import {LoginPage} from "../pages/LoginPage.tsx";
-import {AuthProductsPage} from "../pages/AuthProductsPage.tsx";
+import {ProductsPage} from "../pages/ProductsPage.tsx";
+
 
 export const router = createBrowserRouter([
     {path: '', element:<MainLayout/>, children:[
-            {index:true, element:<HomePage/>},
             {path:'login', element:<LoginPage/>},
-            {path: 'auth/products', element:<AuthProductsPage/>}
+            {path: 'auth/products', element:<ProductsPage/>}
         ]}
 ]);
