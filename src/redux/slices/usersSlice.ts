@@ -1,5 +1,6 @@
 import {createAsyncThunk, createSlice, isFulfilled, isRejected, type PayloadAction} from "@reduxjs/toolkit";
 import type {IUser} from "../../interfaces/IUser.ts";
+import {userService} from "../../services/userService.ts";
 
 type UsersSliceType ={
     users:IUser[],
@@ -16,10 +17,9 @@ const loadUsers = createAsyncThunk(
     'userSlice/loadUsers',
     async (_, thunkAPI) =>{
         try {
-            const users = await fetch('https://jsonplaceholder.typicode.com/users')
-                .then(response => response.json());
+            const {data} = await userService.getAllUsers()
             // thunkAPI.dispatch(userAction.changeLoadState(true))
-            return thunkAPI.fulfillWithValue(users);
+            return thunkAPI.fulfillWithValue(data);
             // throw new Error('sdc')
         } catch (e){
             console.log(e);
@@ -30,11 +30,8 @@ const getUser = createAsyncThunk(
     'userSlice/getUser',
     async (id:string, thunkAPI) =>{
         try {
-            const user = await fetch('https://jsonplaceholder.typicode.com/users/'+id)
-                .then(response => response.json());
-            // thunkAPI.dispatch(userAction.changeLoadState(true))
-            return thunkAPI.fulfillWithValue(user);
-            // throw new Error('sdc')
+            const {data} = await userService.getUser(+id)
+            return thunkAPI.fulfillWithValue(data);
         } catch (e){
             console.log(e);
             return thunkAPI.rejectWithValue('error')
